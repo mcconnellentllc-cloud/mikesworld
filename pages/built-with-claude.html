@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="How Pasture Perfect Premium Beef's website was built using Claude Code AI, and our roadmap for adding database functionality with Airtable.">
+  <title>Built with Claude Code | Pasture Perfect Premium Beef</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+  <style>
+    .tech-content {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+    .tech-content h3 {
+      font-family: var(--font-heading);
+      color: var(--color-gold);
+      font-weight: 400;
+      font-size: 1.5rem;
+      margin-top: 3rem;
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--color-border);
+    }
+    .tech-content h3:first-of-type {
+      margin-top: 0;
+    }
+    .tech-content p {
+      color: var(--color-light-gray);
+      font-weight: 300;
+      line-height: 1.8;
+      margin-bottom: 1.25rem;
+    }
+    .tech-content ul, .tech-content ol {
+      color: var(--color-light-gray);
+      font-weight: 300;
+      line-height: 2;
+      margin-bottom: 1.5rem;
+      padding-left: 1.5rem;
+    }
+    .tech-content li {
+      margin-bottom: 0.5rem;
+    }
+    .tech-content strong {
+      color: var(--color-white);
+      font-weight: 500;
+    }
+    .tech-content a {
+      color: var(--color-gold);
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.3s;
+    }
+    .tech-content a:hover {
+      border-bottom-color: var(--color-gold);
+    }
+    .tech-content code {
+      background: var(--color-near-black);
+      color: var(--color-gold);
+      padding: 0.15rem 0.5rem;
+      border-radius: 3px;
+      font-size: 0.9em;
+      font-family: 'Courier New', monospace;
+    }
+    .tech-content pre {
+      background: var(--color-near-black);
+      border: 1px solid var(--color-border);
+      border-left: 3px solid var(--color-gold);
+      padding: 1.25rem;
+      border-radius: 4px;
+      overflow-x: auto;
+      margin-bottom: 1.5rem;
+    }
+    .tech-content pre code {
+      background: none;
+      padding: 0;
+      font-size: 0.85em;
+      line-height: 1.7;
+      color: var(--color-light-gray);
+    }
+    .info-box {
+      background: var(--color-near-black);
+      border: 1px solid var(--color-border);
+      border-left: 3px solid var(--color-gold);
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: 4px;
+    }
+    .info-box h4 {
+      font-family: var(--font-heading);
+      color: var(--color-white);
+      font-weight: 400;
+      font-size: 1.1rem;
+      margin-bottom: 0.75rem;
+    }
+    .info-box p {
+      margin-bottom: 0.5rem;
+      font-size: 0.95rem;
+    }
+    .info-box p:last-child {
+      margin-bottom: 0;
+    }
+    .roadmap-step {
+      background: var(--color-near-black);
+      border: 1px solid var(--color-border);
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+      border-radius: 4px;
+      position: relative;
+      padding-left: 4rem;
+    }
+    .roadmap-step .step-num {
+      position: absolute;
+      left: 1.25rem;
+      top: 1.5rem;
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      color: var(--color-gold);
+      font-weight: 300;
+    }
+    .roadmap-step h4 {
+      font-family: var(--font-heading);
+      color: var(--color-white);
+      font-weight: 400;
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+    }
+    .roadmap-step p {
+      font-size: 0.92rem;
+      margin-bottom: 0;
+    }
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+    }
+    .comparison-table th,
+    .comparison-table td {
+      padding: 0.75rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--color-border);
+      color: var(--color-light-gray);
+      font-weight: 300;
+      font-size: 0.92rem;
+    }
+    .comparison-table th {
+      color: var(--color-gold);
+      font-weight: 500;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .comparison-table tr:hover td {
+      background: var(--color-near-black);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="header-top">
+      <span>Family-Owned &amp; Operated &bull; Sedgwick, Colorado &bull; Est. 1993</span>
+    </div>
+    <nav class="nav-container">
+      <a href="../index.html" class="logo">
+        <span class="logo-main">Pasture Perfect</span>
+        <span class="logo-sub">Premium Beef</span>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="../index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="products.html">Products</a>
+        <a href="cutsheet.html">Cut Sheet</a>
+        <a href="history.html">Our History</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Contact</a>
+        <a href="products.html" class="nav-cta">Order Now</a>
+      </div>
+      <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <h1>Built with Claude Code</h1>
+    <p>How AI-assisted development brought this website to life &mdash; and what comes next.</p>
+    <div class="breadcrumb">
+      <a href="../index.html">Home</a> / Built with Claude Code
+    </div>
+  </section>
+
+  <!-- Content -->
+  <section>
+    <div class="container">
+      <div class="tech-content">
+
+        <h3>What is Claude Code?</h3>
+        <p><strong>Claude Code</strong> is an AI-powered command-line tool built by <a href="https://www.anthropic.com" target="_blank" rel="noopener">Anthropic</a>. It acts as a coding partner that can read, write, and edit code directly in your project through natural conversation. Instead of manually writing every line of HTML, CSS, and JavaScript, we described what we wanted and Claude Code built it &mdash; iterating with us in real time.</p>
+
+        <p>Think of it like having a senior developer sitting next to you. You say, "Build a products page with our beef offerings, a gold and black color scheme, and mobile responsiveness," and it creates the files, writes the code, and refines the design based on your feedback.</p>
+
+        <h3>How This Site Was Built</h3>
+        <p>This entire website &mdash; every page, every style, every interaction &mdash; was built through a conversational workflow with Claude Code. Here's how the process worked:</p>
+
+        <ol>
+          <li><strong>Started with the vision.</strong> We described the Pasture Perfect brand: a family farm in Sedgwick, Colorado, raising premium Black Angus beef. We wanted a premium, elegant feel &mdash; black and gold, refined typography, no clutter.</li>
+          <li><strong>Built the foundation.</strong> Claude Code generated the HTML structure, CSS styling, and JavaScript functionality for the homepage, including navigation, hero section, testimonials, and payment options.</li>
+          <li><strong>Expanded page by page.</strong> Through conversation, we added the About page, Products page, Our History timeline, FAQ accordion, Contact form, and Cut Sheet &mdash; each matching the established design language.</li>
+          <li><strong>Refined the details.</strong> We iterated on colors, fonts (Cormorant Garamond for headings, Inter for body text), spacing, and mobile responsiveness. Adjustments were made in real time through simple requests.</li>
+          <li><strong>Managed with Git.</strong> Claude Code handled version control throughout &mdash; creating branches, committing changes, and pushing to GitHub, all from the same conversation.</li>
+        </ol>
+
+        <div class="info-box">
+          <h4>The Tech Stack</h4>
+          <p><strong>HTML5</strong> &mdash; Semantic markup for all pages</p>
+          <p><strong>CSS3</strong> &mdash; Custom properties, flexbox, grid, responsive design</p>
+          <p><strong>Vanilla JavaScript</strong> &mdash; Mobile menu, FAQ accordion, payment modals, form handling</p>
+          <p><strong>Google Fonts</strong> &mdash; Cormorant Garamond + Inter</p>
+          <p><strong>GitHub</strong> &mdash; Version control and hosting</p>
+          <p><strong>No frameworks, no build tools, no dependencies</strong> &mdash; just clean, fast, maintainable code</p>
+        </div>
+
+        <h3>What We Learned</h3>
+        <p>Building with Claude Code fundamentally changes the development process. Here are some key takeaways:</p>
+        <ul>
+          <li><strong>Speed.</strong> What would typically take days or weeks of development was accomplished in hours. Full pages with responsive design, animations, and interactive elements were created through simple descriptions.</li>
+          <li><strong>Iteration is effortless.</strong> Changing the entire color scheme from warm browns to black and gold? One request. Adding six testimonials instead of three? Done in seconds. Removing emojis across every page? Handled instantly.</li>
+          <li><strong>No coding knowledge required to direct.</strong> While understanding code helps, the conversational interface means anyone with a clear vision can guide the development process.</li>
+          <li><strong>Quality output.</strong> The generated code follows best practices &mdash; semantic HTML, CSS custom properties, accessible markup, mobile-first responsive design.</li>
+        </ul>
+
+        <h3>Next Steps: Adding a Database with Airtable</h3>
+        <p>Currently, the Cut Sheet and Contact forms use <code>mailto:</code> links to send information via email. This works, but it means data isn't stored in a central location. The next phase is to connect the site to <strong>Airtable</strong> as a lightweight database backend.</p>
+
+        <h3>Why Airtable?</h3>
+        <p>For a small family operation with low traffic, Airtable is an ideal choice:</p>
+        <ul>
+          <li><strong>Always on.</strong> Unlike many free database services (Render, Supabase, Neon) that spin down or pause after periods of inactivity, Airtable is always available. No cold starts, no waiting for the database to wake up.</li>
+          <li><strong>Visual interface.</strong> Kim can view, sort, filter, and manage all orders and cut sheets directly in Airtable's spreadsheet-like interface &mdash; no technical knowledge needed.</li>
+          <li><strong>Free tier works for low volume.</strong> The free plan includes 1,000 records per base and 1,000 API calls per month. For a small beef operation processing a handful of orders per week, this is more than enough.</li>
+          <li><strong>Built-in notifications.</strong> Airtable can be configured to send email notifications when new records are added, so Kim gets alerted immediately when a customer submits a cut sheet.</li>
+          <li><strong>No server required.</strong> The website can send data directly to Airtable's API from the browser, eliminating the need to set up and maintain a backend server.</li>
+        </ul>
+
+        <div class="info-box">
+          <h4>Airtable Free Plan Limits</h4>
+          <p><strong>1,000 records</strong> per base (more than enough for order tracking)</p>
+          <p><strong>1,000 API calls</strong> per month (each form submission = 1 call)</p>
+          <p><strong>1 GB</strong> attachment storage</p>
+          <p><strong>No spin down</strong> &mdash; always available, no cold starts</p>
+          <p><strong>No credit card required</strong> to get started</p>
+        </div>
+
+        <h3>Implementation Roadmap</h3>
+        <p>Here's how we'll connect the site to Airtable:</p>
+
+        <div class="roadmap-step">
+          <span class="step-num">01</span>
+          <h4>Create the Airtable Base</h4>
+          <p>Set up an Airtable base with two tables: <strong>Cut Sheet Submissions</strong> and <strong>Contact Form Messages</strong>. Each table will have fields matching our form inputs (customer name, email, phone, order type, cut preferences, etc.).</p>
+        </div>
+
+        <div class="roadmap-step">
+          <span class="step-num">02</span>
+          <h4>Generate an API Key</h4>
+          <p>Create a personal access token in Airtable with write permissions to the base. This token will be used to authenticate API requests from the website forms.</p>
+        </div>
+
+        <div class="roadmap-step">
+          <span class="step-num">03</span>
+          <h4>Update the Form Handlers</h4>
+          <p>Modify the JavaScript form handlers to send data to Airtable's REST API instead of (or in addition to) the <code>mailto:</code> link. Each form submission will create a new record in the appropriate table.</p>
+        </div>
+
+        <div class="roadmap-step">
+          <span class="step-num">04</span>
+          <h4>Add Confirmation &amp; Error Handling</h4>
+          <p>Show the customer a success message when their submission is recorded, or a helpful error message if something goes wrong. Include a fallback to the email method if the API is unavailable.</p>
+        </div>
+
+        <div class="roadmap-step">
+          <span class="step-num">05</span>
+          <h4>Set Up Notifications</h4>
+          <p>Configure Airtable automations to email <strong>kim@theperfectbeef.com</strong> whenever a new cut sheet or contact form submission arrives. This ensures no order is missed.</p>
+        </div>
+
+        <div class="roadmap-step">
+          <span class="step-num">06</span>
+          <h4>Optional: Add Order Tracking</h4>
+          <p>Add status fields in Airtable (Received, Processing, Ready for Pickup, Shipped) so Kim can track each order's progress. A future enhancement could let customers check their order status on the website.</p>
+        </div>
+
+        <h3>Example: How the API Call Works</h3>
+        <p>Here's a simplified example of how a cut sheet submission would be sent to Airtable:</p>
+
+        <pre><code>// Send cut sheet data to Airtable
+fetch('https://api.airtable.com/v0/YOUR_BASE_ID/Cut%20Sheets', {
+  method: 'POST',
+  headers: {
+    'Authorization': 'Bearer YOUR_API_TOKEN',
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({
+    fields: {
+      'Name': 'John Smith',
+      'Email': 'john@example.com',
+      'Order Type': 'Half Beef',
+      'Steak Thickness': '1 inch',
+      'Roast Size': '3-4 lbs',
+      'Ground Beef Pkg': '1 lb packages'
+      // ... all other cut sheet fields
+    }
+  })
+});</code></pre>
+
+        <div class="info-box">
+          <h4>Security Note</h4>
+          <p>For production use, the Airtable API token should not be exposed in client-side JavaScript. A lightweight serverless function (via Vercel, Netlify, or Cloudflare Workers &mdash; all with free tiers) can act as a proxy to keep the token secure while still allowing the static site to submit data.</p>
+        </div>
+
+        <h3>Why Not Other Options?</h3>
+        <p>We evaluated several alternatives before choosing Airtable:</p>
+
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Service</th>
+              <th>Free Tier</th>
+              <th>Spins Down?</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Airtable</strong></td>
+              <td>1,000 records, 1,000 API calls/mo</td>
+              <td>No</td>
+              <td>Visual UI for Kim, always on, perfect for low volume</td>
+            </tr>
+            <tr>
+              <td>Supabase</td>
+              <td>500 MB, Postgres</td>
+              <td>Yes (7 days)</td>
+              <td>Pauses after 7 days of inactivity</td>
+            </tr>
+            <tr>
+              <td>Neon</td>
+              <td>0.5 GB, Postgres</td>
+              <td>Yes (5 min)</td>
+              <td>Scales to zero after 5 min idle, cold start delay</td>
+            </tr>
+            <tr>
+              <td>Render Postgres</td>
+              <td>1 GB</td>
+              <td>Expires</td>
+              <td>Free databases expire after 30-90 days</td>
+            </tr>
+            <tr>
+              <td>MongoDB Atlas</td>
+              <td>512 MB</td>
+              <td>No</td>
+              <td>Always on, but requires more technical setup</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>Airtable wins for this use case because it combines an always-on database with a user-friendly interface that Kim can manage without any technical knowledge. She can view orders, update statuses, and export data &mdash; all from a familiar spreadsheet-like view.</p>
+
+        <h3>The Power of AI-Assisted Development</h3>
+        <p>This website demonstrates what's possible when you combine a clear vision with AI-powered development tools. From the first line of code to this very page, every element was created through a collaborative conversation between human intent and machine capability.</p>
+
+        <p>The future of small business websites isn't about learning to code &mdash; it's about knowing what you want and having the right tools to bring it to life. Claude Code is one of those tools, and we're excited to keep building with it.</p>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-banner">
+    <h2>Interested in What We're Building?</h2>
+    <p>Follow our journey as we continue to improve the Pasture Perfect experience.</p>
+    <a href="contact.html" class="btn btn-primary">Get in Touch</a>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo-main">Pasture Perfect</div>
+          <div class="logo-sub">Premium Beef</div>
+          <p>A small family operation raising premium beef in Sedgwick, Colorado since 1993.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigate</h4>
+          <a href="../index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="products.html">Products</a>
+          <a href="cutsheet.html">Cut Sheet</a>
+          <a href="history.html">Our History</a>
+          <a href="faq.html">FAQ</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h4>Products</h4>
+          <a href="products.html">Simple Sampler</a>
+          <a href="products.html">Quarter Beef</a>
+          <a href="products.html">Half Beef</a>
+          <a href="products.html">Whole Beef</a>
+          <a href="products.html">Ground Beef</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <p>13380 County Road 3.4<br>Sedgwick, CO</p>
+          <p style="margin-top: 0.5rem;">(970) 301-3857</p>
+          <p style="margin-top: 0.5rem;">kim@theperfectbeef.com</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Pasture Perfect Premium Beef. All rights reserved.</span>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/PasturePerfectPremiumBeef/" target="_blank" rel="noopener">Facebook</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
