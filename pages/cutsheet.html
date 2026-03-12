@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Customize your beef cuts with our Cut Sheet. Choose steak thickness, roast sizes, ground beef packaging, and more for your Half or Whole beef order.">
+  <title>Cut Sheet | Pasture Perfect Premium Beef</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="header-top">
+      <span>Family-Owned &amp; Operated &bull; Sedgwick, Colorado &bull; Est. 1993</span>
+    </div>
+    <nav class="nav-container">
+      <a href="../index.html" class="logo">
+        <span class="logo-main">Pasture Perfect</span>
+        <span class="logo-sub">Premium Beef</span>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="../index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="products.html">Products</a>
+        <a href="cutsheet.html" class="active">Cut Sheet</a>
+        <a href="history.html">Our History</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Contact</a>
+        <a href="products.html" class="nav-cta">Order Now</a>
+      </div>
+      <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <h1>Beef Cut Sheet</h1>
+    <p>Customize your Half or Whole beef order exactly how you like it.</p>
+    <div class="breadcrumb">
+      <a href="../index.html">Home</a> / Cut Sheet
+    </div>
+  </section>
+
+  <!-- Cut Sheet Introduction -->
+  <section>
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Your Preferences</span>
+        <h2>Tell Us How You Want Your Beef</h2>
+        <div class="section-divider"></div>
+        <p>When you order a Half or Whole beef, you get to choose exactly how your meat is cut and packaged. Fill out the form below and we'll make sure your order is processed to your specifications.</p>
+      </div>
+
+      <div class="contact-form" style="max-width: 800px; margin: 0 auto;">
+        <form id="cutSheetForm" onsubmit="handleCutSheetSubmit(event)">
+
+          <!-- Customer Information -->
+          <h3 style="font-family: var(--font-heading); color: var(--color-white); font-weight: 400; font-size: 1.4rem; margin-bottom: 1.5rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--color-gold);">Customer Information</h3>
+
+          <div class="form-group">
+            <label for="custName">Full Name *</label>
+            <input type="text" id="custName" name="custName" placeholder="Your full name" required>
+          </div>
+          <div class="form-group">
+            <label for="custEmail">Email Address *</label>
+            <input type="email" id="custEmail" name="custEmail" placeholder="your@email.com" required>
+          </div>
+          <div class="form-group">
+            <label for="custPhone">Phone Number</label>
+            <input type="tel" id="custPhone" name="custPhone" placeholder="(123) 456-7890">
+          </div>
+
+          <!-- Order Type -->
+          <h3 style="font-family: var(--font-heading); color: var(--color-white); font-weight: 400; font-size: 1.4rem; margin-bottom: 1.5rem; margin-top: 2.5rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--color-gold);">Order Type</h3>
+
+          <div class="form-group">
+            <label for="orderType">What are you ordering? *</label>
+            <select id="orderType" name="orderType" required>
+              <option value="">Select order type...</option>
+              <option value="Half Beef">Half Beef</option>
+              <option value="Whole Beef">Whole Beef</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="finishType">Finish Preference *</label>
+            <select id="finishType" name="finishType" required>
+              <option value="">Select finish type...</option>
+              <option value="Grain Finished">Grain Finished (rich marbling, classic flavor)</option>
+              <option value="Grass Fed">Grass Fed (leaner, robust flavor)</option>
+            </select>
+          </div>
+
+          <!-- Steaks -->
+          <h3 style="font-family: var(--font-heading); color: var(--color-white); font-weight: 400; font-size: 1.4rem; margin-bottom: 1.5rem; margin-top: 2.5rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--color-gold);">Steak Preferences</h3>
+
+          <div class="form-group">
+            <label for="steakCut">Steaks: Bone-In or Boneless? *</label>
+            <select id="steakCut" name="steakCut" required>
+              <option value="">Select preference...</option>
+              <option value="Bone-In">Bone-In</option>
+              <option value="Boneless">Boneless</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="steakThickness">Steak Thickness *</label>
+            <select id="steakThickness" name="steakThickness" required>
+              <option value="">Select thickness...</option>
+              <option value="3/4 inch">3/4 inch</option>
+              <option value="1 inch">1 inch (most popular)</option>
+              <option value="1-1/4 inch">1-1/4 inch</option>
+              <option value="1-1/2 inch">1-1/2 inch</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="steaksPerPkg">Steaks Per Package *</label>
+            <select id="steaksPerPkg" name="steaksPerPkg" required>
+              <option value="">Select quantity...</option>
+              <option value="1">1 per package</option>
+              <option value="2">2 per package (most popular)</option>
+              <option value="4">4 per package</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="ribSteak">Rib Section Preference *</label>
+            <select id="ribSteak" name="ribSteak" required>
+              <option value="">Select preference...</option>
+              <option value="Ribeye Steaks">Ribeye Steaks</option>
+              <option value="Rib Roast (Prime Rib)">Rib Roast (Prime Rib)</option>
+              <option value="Half Steaks / Half Roast">Half Steaks / Half Roast</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="loinChoice">Loin Section Preference *</label>
+            <select id="loinChoice" name="loinChoice" required>
+              <option value="">Select preference...</option>
+              <option value="T-Bone / Porterhouse Steaks">T-Bone / Porterhouse Steaks</option>
+              <option value="NY Strip Steaks + Tenderloin Steaks">NY Strip Steaks + Tenderloin Steaks (separated)</option>
+              <option value="NY Strip Steaks + Whole Tenderloin">NY Strip Steaks + Whole Tenderloin</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="sirloinChoice">Sirloin Preference *</label>
+            <select id="sirloinChoice" name="sirloinChoice" required>
+              <option value="">Select preference...</option>
+              <option value="Sirloin Steaks">Sirloin Steaks</option>
+              <option value="Sirloin Roast">Sirloin Roast</option>
+              <option value="Ground">Ground into hamburger</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="roundChoice">Round Section Preference *</label>
+            <select id="roundChoice" name="roundChoice" required>
+              <option value="">Select preference...</option>
+              <option value="Round Steaks">Round Steaks</option>
+              <option value="Round Roasts">Round Roasts</option>
+              <option value="London Broil">London Broil</option>
+              <option value="Ground">Ground into hamburger</option>
+            </select>
+          </div>
+
+          <!-- Roasts -->
+          <h3 style="font-family: var(--font-heading); color: var(--color-white); font-weight: 400; font-size: 1.4rem; margin-bottom: 1.5rem; margin-top: 2.5rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--color-gold);">Roast Preferences</h3>
+
+          <div class="form-group">
+            <label for="roastBone">Roasts: Bone-In or Boneless?</label>
+            <select id="roastBone" name="roastBone">
+              <option value="">Select preference...</option>
+              <option value="Bone-In">Bone-In</option>
+              <option value="Boneless">Boneless</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="roastSize">Roast Size *</label>
+            <select id="roastSize" name="roastSize" required>
+              <option value="">Select size...</option>
+              <option value="2-3 lbs">2-3 lbs</option>
+              <option value="3-4 lbs">3-4 lbs (most popular)</option>
+              <option value="4-5 lbs">4-5 lbs</option>
+              <option value="5-6 lbs">5-6 lbs</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="chuckChoice">Chuck Section Preference *</label>
+            <select id="chuckChoice" name="chuckChoice" required>
+              <option value="">Select preference...</option>
+              <option value="Chuck Roasts">All Chuck Roasts</option>
+              <option value="Half Roasts / Half Ground">Half Roasts / Half Ground</option>
+              <option value="Ground">All Ground into hamburger</option>
+            </select>
+          </div>
+
+          <!-- Ground Beef -->
+          <h3 style="font-family: var(--font-heading); color: var(--color-white); font-weight: 400; font-size: 1.4rem; margin-bottom: 1.5rem; margin-top: 2.5rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--color-gold);">Ground Beef</h3>
+
+          <div class="form-group">
+            <label for="groundPkgSize">Ground Beef Package Size *</label>
+            <select id="groundPkgSize" name="groundPkgSize" required>
+              <option value="">Select size...</option>
+              <option value="1 lb">1 lb packages</option>
+              <option value="1.5 lbs">1.5 lb packages</option>
+              <option value="2 lbs">2 lb packages</option>
+              <option value="5 lbs">5 lb packages</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="patties">Would you like ground beef patties?</label>
+            <select id="patties" name="patties">
+              <option value="No">No patties</option>
+              <option value="Yes - 1/4 lb patties">Yes - 1/4 lb patties</option>
+              <option value="Yes - 1/3 lb patties">Yes - 1/3 lb patties</option>
+              <option value="Yes - 1/2 lb patties">Yes - 1/2 lb patties</option>
+            </select>
+          </div>
+
+          <!-- Specialty Cuts -->
+          <h3 style="font-family: var(--font-heading); color: var(--color-white); font-weight: 400; font-size: 1.4rem; margin-bottom: 1.5rem; margin-top: 2.5rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--color-gold);">Specialty &amp; Extra Cuts</h3>
+
+          <div class="form-group">
+            <label for="shortRibs">Short Ribs</label>
+            <select id="shortRibs" name="shortRibs">
+              <option value="Yes">Yes, I want short ribs</option>
+              <option value="No">No short ribs (grind into hamburger)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="stewMeat">Stew Meat</label>
+            <select id="stewMeat" name="stewMeat">
+              <option value="Yes">Yes, I want stew meat</option>
+              <option value="No">No stew meat (grind into hamburger)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="soupBones">Soup Bones</label>
+            <select id="soupBones" name="soupBones">
+              <option value="Yes">Yes, keep soup bones</option>
+              <option value="No">No soup bones</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="organMeats">Organ Meats (heart, liver, tongue)</label>
+            <select id="organMeats" name="organMeats">
+              <option value="No">No organ meats</option>
+              <option value="Heart only">Heart only</option>
+              <option value="Liver only">Liver only (sliced)</option>
+              <option value="Tongue only">Tongue only</option>
+              <option value="All organ meats">All organ meats</option>
+            </select>
+          </div>
+
+          <!-- Special Instructions -->
+          <h3 style="font-family: var(--font-heading); color: var(--color-white); font-weight: 400; font-size: 1.4rem; margin-bottom: 1.5rem; margin-top: 2.5rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--color-gold);">Special Instructions</h3>
+
+          <div class="form-group">
+            <label for="specialInstructions">Any additional requests or notes?</label>
+            <textarea id="specialInstructions" name="specialInstructions" placeholder="Tell us about any special requests, custom cuts, or preferences not listed above..."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Submit Cut Sheet</button>
+
+          <p style="text-align: center; color: var(--color-medium-gray); font-size: 0.85rem; margin-top: 1rem; font-weight: 300;">
+            Your cut sheet will be emailed to us. We'll confirm your selections within 1-2 business days.
+            <br>Questions? Call <strong>(970) 301-3857</strong>.
+          </p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-banner">
+    <h2>Need Help With Your Selections?</h2>
+    <p>Not sure which cuts to choose? Give us a call and we'll walk you through it.</p>
+    <a href="contact.html" class="btn btn-primary">Contact Us</a>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo-main">Pasture Perfect</div>
+          <div class="logo-sub">Premium Beef</div>
+          <p>A small family operation raising premium beef in Sedgwick, Colorado since 1993.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigate</h4>
+          <a href="../index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="products.html">Products</a>
+          <a href="cutsheet.html">Cut Sheet</a>
+          <a href="history.html">Our History</a>
+          <a href="faq.html">FAQ</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h4>Products</h4>
+          <a href="products.html">Simple Sampler</a>
+          <a href="products.html">Quarter Beef</a>
+          <a href="products.html">Half Beef</a>
+          <a href="products.html">Whole Beef</a>
+          <a href="products.html">Ground Beef</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <p>13380 County Road 3.4<br>Sedgwick, CO</p>
+          <p style="margin-top: 0.5rem;">(970) 301-3857</p>
+          <p style="margin-top: 0.5rem;">kim@theperfectbeef.com</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Pasture Perfect Premium Beef. All rights reserved.</span>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/PasturePerfectPremiumBeef/" target="_blank" rel="noopener">Facebook</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
