@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Shop ethically-raised premium beef from Pasture Perfect. Quarter, Half, and Whole beef options plus samplers and ground beef.">
+  <title>Products | Pasture Perfect Premium Beef</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="header-top">
+      <span>Family-Owned &amp; Operated &bull; Sedgwick, Colorado &bull; Est. 1993</span>
+    </div>
+    <nav class="nav-container">
+      <a href="../index.html" class="logo">
+        <span class="logo-main">Pasture Perfect</span>
+        <span class="logo-sub">Premium Beef</span>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="../index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="products.html" class="active">Products</a>
+        <a href="history.html">Our History</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Contact</a>
+        <a href="products.html" class="nav-cta">Order Now</a>
+      </div>
+      <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <h1>The Meat Market</h1>
+    <p>Ethically-raised premium quality beef. From our pastures to your table.</p>
+    <div class="breadcrumb">
+      <a href="../index.html">Home</a> / Products
+    </div>
+  </section>
+
+  <!-- Products Introduction -->
+  <section>
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Our Offerings</span>
+        <h2>Premium Beef, Your Way</h2>
+        <div class="section-divider"></div>
+        <p>Choose grain-finished for rich marbling or grass-finished for a leaner option. All beef is dry-aged 21 days and processed at USDA certified facilities.</p>
+      </div>
+
+      <div class="products-grid">
+
+        <!-- Simple Sampler -->
+        <div class="product-card">
+          <div class="product-image">
+            <span class="product-image-icon">&#129385;</span>
+            <span class="product-tag">Perfect Start</span>
+          </div>
+          <div class="product-info">
+            <h3>Simple Sampler</h3>
+            <p>A delectable introduction perfectly crafted for new customers and culinary explorers &mdash; a delightful journey through the best of what beef has to offer.</p>
+            <ul class="product-details">
+              <li>Curated selection of premium cuts</li>
+              <li>Ideal for trying before buying bulk</li>
+              <li>Dry-aged 21 days for peak flavor</li>
+              <li>USDA certified &amp; inspected</li>
+            </ul>
+            <a href="#order" class="product-btn">Order Sampler</a>
+          </div>
+        </div>
+
+        <!-- Ground Beef -->
+        <div class="product-card">
+          <div class="product-image">
+            <span class="product-image-icon">&#129385;</span>
+            <span class="product-tag">Versatile</span>
+          </div>
+          <div class="product-info">
+            <h3>Ground Beef</h3>
+            <p>A versatile staple from the best primal cuts to ensure robust flavor and unmatched freshness. Ships conveniently to your door.</p>
+            <ul class="product-details">
+              <li>From the best primal cuts</li>
+              <li>Robust flavor &amp; freshness</li>
+              <li>Convenient shipping available</li>
+              <li>Perfect for everyday meals</li>
+            </ul>
+            <a href="#order" class="product-btn">Order Ground Beef</a>
+          </div>
+        </div>
+
+        <!-- Quarter Beef -->
+        <div class="product-card">
+          <div class="product-image">
+            <span class="product-image-icon">&#129385;</span>
+            <span class="product-tag">Best Value</span>
+          </div>
+          <div class="product-info">
+            <h3>Quarter Beef</h3>
+            <p>Sourced from our very own cattle, ensuring that each bite brims with flavor and quality. A proportionate sample of a Whole Beef.</p>
+            <ul class="product-details">
+              <li>Carefully selected variety cuts</li>
+              <li>Steaks, roasts &amp; ground beef</li>
+              <li>Locally raised, responsibly &amp; ethically</li>
+              <li>Processing fees included</li>
+            </ul>
+            <a href="#order" class="product-btn">Order Quarter Beef</a>
+          </div>
+        </div>
+
+        <!-- Half Beef -->
+        <div class="product-card">
+          <div class="product-image">
+            <span class="product-image-icon">&#129385;</span>
+            <span class="product-tag">Customizable</span>
+          </div>
+          <div class="product-info">
+            <h3>Half Beef</h3>
+            <p>With customizable cuts, decide how thick your steaks, the exact size of your roasts, and how many pounds each package of ground beef contains.</p>
+            <ul class="product-details">
+              <li>Fully customizable cut options</li>
+              <li>Prime Rib, Brisket, Organ Meat &amp; more</li>
+              <li>Choose steak thickness &amp; roast size</li>
+              <li>All processing fees included</li>
+            </ul>
+            <a href="#order" class="product-btn">Order Half Beef</a>
+          </div>
+        </div>
+
+        <!-- Whole Beef -->
+        <div class="product-card">
+          <div class="product-image">
+            <span class="product-image-icon">&#129385;</span>
+            <span class="product-tag">Maximum Value</span>
+          </div>
+          <div class="product-info">
+            <h3>Whole Beef</h3>
+            <p>The ultimate package &mdash; take home a minimum of 529 pounds of premium beef. Full customization of every cut to your specifications.</p>
+            <ul class="product-details">
+              <li>Minimum 529 lbs of beef</li>
+              <li>Complete cut customization</li>
+              <li>Best price per pound</li>
+              <li>All processing fees included</li>
+            </ul>
+            <a href="#order" class="product-btn">Order Whole Beef</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Quality Promise -->
+  <section class="section-dark">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Our Quality</span>
+        <h2>What Makes Our Beef Different</h2>
+        <div class="section-divider"></div>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <span class="feature-icon">&#127793;</span>
+          <h3>Pasture Raised</h3>
+          <p>Our cattle enjoy open Colorado pastures and fresh air. We believe happy cattle produce the best beef.</p>
+        </div>
+        <div class="feature-card">
+          <span class="feature-icon">&#127806;</span>
+          <h3>Grain Finished</h3>
+          <p>A grain-finished diet grown right here on our farm adds richness of flavor and beautiful marbling.</p>
+        </div>
+        <div class="feature-card">
+          <span class="feature-icon">&#128338;</span>
+          <h3>21-Day Dry Aged</h3>
+          <p>Each cut is masterfully dry-aged for 21 days, intensifying flavor and tenderness beyond compare.</p>
+        </div>
+        <div class="feature-card">
+          <span class="feature-icon">&#9989;</span>
+          <h3>USDA Certified</h3>
+          <p>Processed at USDA certified facilities. Every cut is meticulously inspected for your peace of mind.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section>
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">How It Works</span>
+        <h2>From Our Pasture to Your Table</h2>
+        <div class="section-divider"></div>
+      </div>
+      <div class="features-grid" style="color: var(--color-text);">
+        <div class="feature-card" style="background-color: var(--color-white); border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.06);">
+          <span class="feature-icon">1&#65039;&#8419;</span>
+          <h3 style="color: var(--color-dark-brown);">Choose Your Package</h3>
+          <p style="color: #666;">Select from our Sampler, Quarter, Half, or Whole beef options based on your needs.</p>
+        </div>
+        <div class="feature-card" style="background-color: var(--color-white); border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.06);">
+          <span class="feature-icon">2&#65039;&#8419;</span>
+          <h3 style="color: var(--color-dark-brown);">Customize Your Cuts</h3>
+          <p style="color: #666;">For Half and Whole orders, tell us exactly how you want your steaks, roasts, and ground beef.</p>
+        </div>
+        <div class="feature-card" style="background-color: var(--color-white); border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.06);">
+          <span class="feature-icon">3&#65039;&#8419;</span>
+          <h3 style="color: var(--color-dark-brown);">Pay Securely</h3>
+          <p style="color: #666;">Pay conveniently via PayPal or Venmo. All transactions are secure and encrypted.</p>
+        </div>
+        <div class="feature-card" style="background-color: var(--color-white); border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.06);">
+          <span class="feature-icon">4&#65039;&#8419;</span>
+          <h3 style="color: var(--color-dark-brown);">Enjoy Premium Beef</h3>
+          <p style="color: #666;">Pick up your order or have it shipped. Fire up the grill and taste the Peterson difference.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Order / Payment Section -->
+  <section id="order" class="section-brown">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Place Your Order</span>
+        <h2>Ready to Order?</h2>
+        <div class="section-divider"></div>
+        <p>Contact us to place your order, or pay securely using PayPal or Venmo below.</p>
+      </div>
+      <div class="payment-methods">
+        <div class="payment-card">
+          <div class="payment-icon" style="color: #0070ba;">
+            <svg width="80" height="30" viewBox="0 0 80 30" xmlns="http://www.w3.org/2000/svg">
+              <text x="0" y="24" font-family="Arial, sans-serif" font-weight="bold" font-size="22" fill="#0070ba">PayPal</text>
+            </svg>
+          </div>
+          <h3>Pay with PayPal</h3>
+          <p>Secure payments with buyer protection. Use your PayPal balance, bank, or card.</p>
+          <button class="payment-btn btn-paypal" onclick="initiatePayPal()">
+            Pay with PayPal
+          </button>
+          <div class="payment-icons-row">
+            <span>VISA</span>
+            <span>MC</span>
+            <span>AMEX</span>
+            <span>DISCOVER</span>
+          </div>
+        </div>
+        <div class="payment-card">
+          <div class="payment-icon" style="color: #3d95ce;">
+            <svg width="80" height="30" viewBox="0 0 80 30" xmlns="http://www.w3.org/2000/svg">
+              <text x="0" y="24" font-family="Arial, sans-serif" font-weight="bold" font-size="22" fill="#3d95ce">Venmo</text>
+            </svg>
+          </div>
+          <h3>Pay with Venmo</h3>
+          <p>Quick payment from your Venmo balance. Scan the code or click to pay.</p>
+          <button class="payment-btn btn-venmo" onclick="initiateVenmo()">
+            Pay with Venmo
+          </button>
+          <div class="payment-icons-row">
+            <span>@PasturePerfectBeef</span>
+          </div>
+        </div>
+      </div>
+      <p class="payment-note" style="color: var(--color-light-gold);">
+        All transactions are secure &amp; encrypted. For custom orders or questions, call us at <strong>(970) 301-3857</strong> or email <strong>kim@theperfectbeef.com</strong>.
+      </p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-banner">
+    <h2>Questions About Our Products?</h2>
+    <p>We'd love to help you choose the right package for your family.</p>
+    <a href="contact.html" class="btn btn-primary">Contact Us</a>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo-main">Pasture Perfect</div>
+          <div class="logo-sub">Premium Beef</div>
+          <p>A small family operation raising premium beef in Sedgwick, Colorado since 1993.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigate</h4>
+          <a href="../index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="products.html">Products</a>
+          <a href="history.html">Our History</a>
+          <a href="faq.html">FAQ</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h4>Products</h4>
+          <a href="products.html">Simple Sampler</a>
+          <a href="products.html">Quarter Beef</a>
+          <a href="products.html">Half Beef</a>
+          <a href="products.html">Whole Beef</a>
+          <a href="products.html">Ground Beef</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <p>13380 County Road 3.4<br>Sedgwick, CO</p>
+          <p style="margin-top: 0.5rem;">(970) 301-3857</p>
+          <p style="margin-top: 0.5rem;">kim@theperfectbeef.com</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Pasture Perfect Premium Beef. All rights reserved.</span>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/PasturePerfectPremiumBeef/" target="_blank" rel="noopener">Facebook</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
