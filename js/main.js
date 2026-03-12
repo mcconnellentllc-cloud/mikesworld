@@ -160,6 +160,62 @@ function handleContactSubmit(event) {
     '</div>';
 }
 
+// Cut Sheet Form Handler
+function handleCutSheetSubmit(event) {
+  event.preventDefault();
+
+  var form = document.getElementById('cutSheetForm');
+  var fields = [
+    { id: 'custName', label: 'Name' },
+    { id: 'custEmail', label: 'Email' },
+    { id: 'custPhone', label: 'Phone' },
+    { id: 'orderType', label: 'Order Type' },
+    { id: 'finishType', label: 'Finish Preference' },
+    { id: 'steakCut', label: 'Steaks Bone-In/Boneless' },
+    { id: 'steakThickness', label: 'Steak Thickness' },
+    { id: 'steaksPerPkg', label: 'Steaks Per Package' },
+    { id: 'ribSteak', label: 'Rib Section' },
+    { id: 'loinChoice', label: 'Loin Section' },
+    { id: 'sirloinChoice', label: 'Sirloin' },
+    { id: 'roundChoice', label: 'Round Section' },
+    { id: 'roastBone', label: 'Roasts Bone-In/Boneless' },
+    { id: 'roastSize', label: 'Roast Size' },
+    { id: 'chuckChoice', label: 'Chuck Section' },
+    { id: 'groundPkgSize', label: 'Ground Beef Package Size' },
+    { id: 'patties', label: 'Patties' },
+    { id: 'shortRibs', label: 'Short Ribs' },
+    { id: 'stewMeat', label: 'Stew Meat' },
+    { id: 'soupBones', label: 'Soup Bones' },
+    { id: 'organMeats', label: 'Organ Meats' },
+    { id: 'specialInstructions', label: 'Special Instructions' }
+  ];
+
+  var mailSubject = 'Cut Sheet - ' + document.getElementById('custName').value + ' - ' + document.getElementById('orderType').value;
+
+  var bodyLines = [];
+  bodyLines.push('BEEF CUT SHEET');
+  bodyLines.push('====================');
+  bodyLines.push('');
+
+  fields.forEach(function(field) {
+    var el = document.getElementById(field.id);
+    var val = el ? el.value : '';
+    if (val) {
+      bodyLines.push(field.label + ': ' + val);
+    }
+  });
+
+  var mailBody = bodyLines.join('%0D%0A');
+
+  window.location.href = 'mailto:kim@theperfectbeef.com?subject=' + encodeURIComponent(mailSubject) + '&body=' + mailBody;
+
+  form.innerHTML = '' +
+    '<div style="text-align:center;padding:3rem 1rem;">' +
+      '<h3 style="font-family:var(--font-heading);color:var(--color-white);margin-bottom:0.5rem;font-weight:400;">Cut Sheet Submitted</h3>' +
+      '<p style="color:var(--color-light-gray);font-weight:300;">Your email client should open with your cut sheet. If it doesn\'t, please email us directly at <strong>kim@theperfectbeef.com</strong> or call <strong>(970) 301-3857</strong>.</p>' +
+    '</div>';
+}
+
 // Smooth scroll for anchor links
 document.addEventListener('DOMContentLoaded', function() {
   document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
